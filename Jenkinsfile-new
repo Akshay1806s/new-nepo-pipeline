@@ -2,7 +2,7 @@ pipeline {
     // add your slave label name
     agent { label 'slave'}
     tools{
-        maven 'maven'
+        maven 'Maven'
     }
     stages {
         stage ('Checkout SCM') {
@@ -25,7 +25,7 @@ pipeline {
             steps {
                // update your tomcat server ip accordingly in below command
 		    echo "deploying on tomcat server"
-               //sh "scp target/maven-web-application.war  ec2-user@54.206.113.147:/opt/tomcat9/webapps/"
+               //sh "scp /var/lib/jenkins/workspace/akshay/target/maven-web-application.war  ec2-user@54.206.113.147:/opt/tomcat9/webapps/"
                     
             }
         }
