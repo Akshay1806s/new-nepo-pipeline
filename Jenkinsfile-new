@@ -2,7 +2,7 @@ pipeline {
     // add your slave label name
     agent { label 'slave'}
     tools{
-        maven 'Maven'
+        maven 'maven'
     }
     stages {
         stage ('Checkout SCM') {
@@ -16,21 +16,19 @@ pipeline {
         stage ('Build') {
 
             steps {
-               sh 'mvn package'
+               sh 'mvn clean package'
             }
         }
         
         stage ('deploy') {
 
             steps {
-               /sshagent(['deploy-user']) {
-    sh "scp -o target/maven-web-application.war ec2-user@3.26.1.25:/opt/tomcat9/webapps/ "
-}
-                         
+              sshagent(['Tomcat']) {
+   			sh "scp -o target/maven-web-applicat}
+		    echo "Build is sucessfull"         
             }
         }
 
         
     }
 }
-
