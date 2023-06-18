@@ -24,7 +24,7 @@ pipeline {
 
             steps {
     // some block
-    sh "scp -o akshay/target/maven-web-application.war ec2-user@3.26.1.25:/opt/tomcat9/webapps/ "
+  //sh "scp -o akshay/target/maven-web-application.war ec2-user@3.26.1.25:/opt/tomcat9/webapps/ "
                          
             }
         }
