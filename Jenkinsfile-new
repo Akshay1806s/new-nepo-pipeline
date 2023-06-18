@@ -23,10 +23,9 @@ pipeline {
         stage ('deploy') {
 
             steps {
-              sshagent(['Tomcat']) {
-   			sh "scp -o target/maven-web-applicat}
+              
 		    echo "Build is sucessfull"         
-            }
+            
         }
 
         
